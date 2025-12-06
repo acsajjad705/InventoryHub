@@ -1,17 +1,29 @@
-# InventoryHub – Optimized Full‑Stack Application
+# InventoryHub
 
-## Overview
-InventoryHub is a full‑stack application built with Node.js, Express, and vanilla JavaScript. It demonstrates seamless front‑end ↔ back‑end communication, JSON API responses, debugging, and performance optimization with Microsoft Copilot.
+A complete, optimized full-stack application demonstrating front-end/back-end integration, JSON structures, debugging, and performance improvements.
 
 ## Features
-- Add, update, delete, and list inventory items
-- JSON API endpoints for communication
-- Optimized queries and payloads
-- Simple front‑end interface
+- REST API with consistent JSON envelopes (data/meta/error)
+- Inventory CRUD with validation, pagination, ETag, and caching
+- Accessible, responsive front-end integrated via Fetch API
 
-## Setup
-1. Clone the repository
-2. Navigate to `backend/` and run:
-   ```bash
-   npm install
-   npm start
+## Getting started
+1. npm install
+2. npm run dev
+3. Open http://localhost:3000
+
+## API examples
+- GET /api/inventory?page=1&limit=10&search=mouse&fields=id,name,quantity
+- POST /api/inventory { name, sku, quantity, location }
+- PATCH /api/inventory/:id { quantity: '+1' }
+- DELETE /api/inventory/:id
+
+## Copilot-assisted workflow (reflective summary)
+- Generated scaffolding for Express routes and front-end fetch logic.
+- Suggested response envelope structure (data/meta/error) for consistency.
+- Aided in debugging CORS, JSON parsing, and pagination off-by-one issues.
+- Proposed ETag + Cache-Control for conditional GET performance.
+- Streamlined field selection with query parameters to reduce response size.
+
+## License
+MIT
